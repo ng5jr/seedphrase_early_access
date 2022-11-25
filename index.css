@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+
 * {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
@@ -11,7 +13,7 @@
 }
 
 body {
-  background-image: url("../assets/background\ pattern.png");
+  background-image: url("../assets/background\ pattern.webp");
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -314,7 +316,7 @@ main {
 .title::before {
   content: "";
   position: absolute;
-  background-image: url("../assets/gradient.png");
+  background-image: url("../assets/gradient.webp");
   height: 100%;
   background-repeat: no-repeat;
   top: -10px;
