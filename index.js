@@ -17,7 +17,11 @@ document.querySelector(".close_icon").addEventListener("click", () => {
 });
 document.querySelector(".send_button").addEventListener("click", (e) => {
   e.preventDefault();
-  congrats.classList.add("congrats_show");
+  var input = document.querySelector("input");
+  input.value = "";
+  setTimeout(() => {
+    congrats.classList.add("congrats_show");
+  }, 500);
 });
 
 document.querySelector("main").addEventListener("click", () => {
