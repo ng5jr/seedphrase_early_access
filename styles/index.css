@@ -37,6 +37,18 @@ body {
 
 /* * Start Background Media queries * */
 
+.locks {
+  height: 100%;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  z-index: 0;
+}
+
+.show_locks {
+  visibility: visible;
+}
+
 @media (min-width: 0px) {
   .gradient {
     height: 284px;
@@ -75,6 +87,18 @@ nav {
 .logo {
   align-items: center;
   display: flex;
+}
+
+.logo_signed::after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  left: -15px;
+  top: 15px;
+  position: absolute;
+  background-image: url("../assets/conffeti.png");
+  z-index: 10;
+  transform: rotate(-30deg);
 }
 
 .logo_image {

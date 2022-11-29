@@ -19,8 +19,13 @@ document.querySelector(".send_button").addEventListener("click", (e) => {
   e.preventDefault();
   var input = document.querySelector("input");
   input.value = "";
+  var logo = document.querySelector(".logo");
+  var locks = document.querySelector(".locks");
+
   setTimeout(() => {
     congrats.classList.add("congrats_show");
+    logo.classList.add("logo_signed");
+    locks.classList.add("show_locks");
   }, 500);
 });
 
