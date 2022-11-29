@@ -37,21 +37,15 @@ body {
 
 /* * Start Background Media queries * */
 
-.locks {
-  height: 100%;
-  position: absolute;
-  visibility: hidden;
-  width: 100%;
-  z-index: 0;
-}
-
-.show_locks {
-  visibility: visible;
-}
-
 @media (min-width: 0px) {
   .gradient {
     height: 284px;
+  }
+  .locks {
+    display: none;
+  }
+  .show_locks {
+    display: none;
   }
 }
 
@@ -59,6 +53,17 @@ body {
   .gradient {
     height: 496px;
     max-height: 100vh;
+  }
+  .locks {
+    height: 100%;
+    position: absolute;
+    display: none;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .show_locks {
+    display: block;
   }
 }
 
