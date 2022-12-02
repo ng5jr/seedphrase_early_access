@@ -1,3 +1,5 @@
+import { addUser } from "./firebase/firebase.js";
+
 document.querySelector(".hamburger-lines").addEventListener("click", () => {
   var menu = document.querySelector(".links_container");
   menu.classList.toggle("menu_hide");
@@ -15,18 +17,25 @@ var congrats = document.querySelector(".congrats");
 document.querySelector(".close_icon").addEventListener("click", () => {
   congrats.classList.remove("congrats_show");
 });
-document.querySelector(".send_button").addEventListener("click", (e) => {
-  e.preventDefault();
-  var input = document.querySelector("input");
-  input.value = "";
-  var logo = document.querySelector(".logo");
-  var locks = document.querySelector(".locks");
 
-  setTimeout(() => {
-    congrats.classList.add("congrats_show");
-    logo.classList.add("logo_signed");
-    locks.classList.add("show_locks");
-  }, 500);
+var input = document.querySelector("input");
+var logo = document.querySelector(".logo");
+var locks = document.querySelector(".locks");
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const userEmail = input.value;
+  try {
+    addUser(userEmail);
+
+    setTimeout(() => {
+      input.value = "";
+      congrats.classList.add("congrats_show");
+      logo.classList.add("logo_signed");
+      locks.classList.add("show_locks");
+    }, 500);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 document.querySelector("main").addEventListener("click", () => {
